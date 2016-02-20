@@ -83,6 +83,7 @@ if (Meteor.isClient) {
 				msg: t,
 				at: new Date(),
 				by: Meteor.user().username,
+				to: "public",
 				user_id: Meteor.user()
 			});
 			e.target.text.value = "";
@@ -90,11 +91,7 @@ if (Meteor.isClient) {
 	});
 
 	Template.newmsg.helpers({
-		time: function () {
-			var t = msg;
-			console(t);
-			return t;
-		}
+		
 	});
 
 	Template.newmsg.events({
