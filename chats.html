@@ -1,0 +1,77 @@
+<head>
+  <title>chats</title>
+</head>
+
+<body>
+	
+  	{{#if currentUser}}
+  		{{> sidebar}}
+  		<div class="msgbox">
+  			 {{> chat}}
+  		 </div>
+  	{{else}}
+ 		{{> login}}
+ 		{{> join}}
+  	{{/if}}
+  	
+</body>
+
+<template name="sidebar">
+	<div class="sidebar">
+		Testing div
+		<button class="btn-logout">Log Out</button>
+		<div class="users">
+		{{#each users}}
+			<div class="user-name user-item">
+				<div class="user-ball {{getUserStatus _id}}-bg"></div> {{username}}
+			</div>
+		{{/each}}
+	</div>
+	</div>
+</template>
+
+<template name="chat">
+	<div class="header">
+		<h2>Hello {{name}}</h2>
+  		{{> chatbox}}
+  	</div>
+  	<br />
+  	<div class="msg-box">
+  	{{#each msgs}}
+  		{{> newmsg}}
+  	{{/each}}
+  	</div>
+</template>
+
+<template name="chatbox">
+	<form class="msg">
+		<input type="text" class="msg-input" name="text" placeholder="Enetr Message here" />
+	</form>
+</template>
+
+<template name="newmsg">
+	<p class="msgdata"><b>{{by}}: </b> {{msg}} <span class="time">{{at}}</span></p>
+	{{time}}
+</template >
+
+<template name="login">
+	<div class="login-box">
+  			<p>Login</p>
+  			<form class="login-form">
+  				<input type="text" name="username" placeholder="Enter Username" />
+  				<input type="password" name="password" placeholder="Enter Password" />
+  				<button type="submit"> Sign in </button>
+  			</form>	
+  		</div>
+</template>
+<template name="join">
+	<div class="join-box">
+		<p>Join</p>
+		<form class="join-form">
+			<input type="text" name="username" placeholder="Choose Username">
+			<input type="password" name="password" placeholder="Enter Password">
+			<input type="password" name="passwordr" placeholder="Confirm Password">
+			<button type="submit">Join The Force</button>
+		</form>
+	</div>
+</template>

@@ -1,0 +1,238 @@
+/* CSS declarations go here */
+body {
+  font-family: sans-serif;
+  background-color: #315481;
+  background-image: linear-gradient(to bottom, #315481, #918e82 100%);
+  background-attachment: fixed;
+
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  padding: 0;
+  margin: 0;
+
+  font-size: 14px;
+}
+
+.msgbox {
+  max-width: 600px;
+  margin: 0 auto;
+  min-height: 100%;
+  background: white;
+}
+
+.header {
+  background: #d2edf4;
+  background-image: linear-gradient(to bottom, #d0edf5, #e1e5f0 100%);
+  padding: 20px 15px 15px 15px;
+  position: relative;
+}
+
+.msg input[type="text"] {
+ box-sizing: border-box;
+  padding: 10px 0;
+  background: transparent;
+  border: none;
+  width: 100%;
+  padding-right: 80px;
+  font-size: 1em;
+}
+.msg input[type="text"]:focus,
+.msg input[type="text"].focus {
+  outline: 0;
+}
+
+.msgdata {
+	border-bottom: solid 1px rgba(0,0,0,0.1) ;
+	padding: 2px;
+	margin: auto;
+  margin-bottom: 5px;
+	background: rgba(220,232,242,1);
+}
+
+.time {
+  float: right;
+  opacity: 0.5;
+}
+
+.login-box {
+    position: absolute;
+    top: calc(30% - 75px);
+    left: calc(30% - 50px);
+    height: 150px;
+    width: 350px;
+    padding: 10px;
+    z-index: 2;
+}
+
+.login-box input[type="text"]{
+  width: 250px;
+height: 30px;
+background: transparent;
+border: 1px solid rgba(255,255,255,0.6);
+border-radius: 2px;
+color: #fff;
+font-family: 'Exo', sans-serif;
+font-size: 16px;
+font-weight: 400;
+padding: 4px;
+}
+.login-box input[type="password"]{
+	width: 250px;
+height: 30px;
+background: transparent;
+border: 1px solid rgba(255,255,255,0.6);
+border-radius: 2px;
+color: #fff;
+font-family: 'Exo', sans-serif;
+font-size: 16px;
+font-weight: 400;
+padding: 4px;
+margin-top: 10px;
+}
+
+.login-box button[type="submit"] {
+    width: 260px;
+    height: 35px;
+    background: #fff;
+    border: 1px solid #fff;
+    cursor: pointer;
+    border-radius: 2px;
+    color: #a18d6c;
+    font-family: 'Exo', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    padding: 6px;
+    margin-top: 10px;
+}
+
+.join-box {
+    position: absolute;
+    top: calc(30% - 75px);
+    left: calc(60% - 50px);
+    height: 150px;
+    width: 350px;
+    padding: 10px;
+    z-index: 2;
+}
+
+.join-box input[type="text"]{
+  width: 250px;
+height: 30px;
+background: transparent;
+border: 1px solid rgba(255,255,255,0.6);
+border-radius: 2px;
+color: #fff;
+font-family: 'Exo', sans-serif;
+font-size: 16px;
+font-weight: 400;
+padding: 4px;
+}
+
+.join-box input[type="password"]{
+	width: 250px;
+height: 30px;
+background: transparent;
+border: 1px solid rgba(255,255,255,0.6);
+border-radius: 2px;
+color: #fff;
+font-family: 'Exo', sans-serif;
+font-size: 16px;
+font-weight: 400;
+padding: 4px;
+margin-top: 10px;
+}
+
+.join-box button[type="submit"] {
+    width: 260px;
+    height: 35px;
+    background: #fff;
+    border: 1px solid #fff;
+    cursor: pointer;
+    border-radius: 2px;
+    color: #a18d6c;
+    font-family: 'Exo', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    padding: 6px;
+    margin-top: 10px;
+}
+
+.btn-logout{
+	width: 130px;
+    height: 35px;
+    background: rgba(172, 207, 209, 0.8);
+    border: 0px solid #fff;
+    border-radius: 2px;
+    font-family: 'Exo', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    padding: 6px;
+    margin-top: 10px;	
+    position: absolute;
+    right: calc(0% - 10%);
+    top: calc(5%);
+}
+
+.btn-logout:hover{
+	background: rgba(172, 207, 209, 0.4);
+}
+
+.btn-logout:active{
+	background: rgba(172, 207, 209, 0.4);
+}
+
+.sidebar {
+	height: 100%;
+	position: absolute;
+  left: calc(10%);
+}
+
+.users {
+  position: fixed;
+  top: 134px;
+  width: 130px;
+  left: 254px;
+  overflow: auto;
+}
+
+.user-ball {
+  float: left;
+  width: 12px;
+  height: 12px;
+  border-radius: 10px;
+  margin-top: 4px;
+  margin-right: 5px;
+  border: 1px solid #CCC;
+}
+.user-item {
+  padding: 8px;
+  border-bottom: 0px solid #E7E7ED;
+}
+
+.user-name {
+  color: #888888;
+}
+
+.online-bg {
+  background-color: rgba(0, 199, 78, .5);
+  border-color: #00C74E;
+}
+
+.away-bg {
+  background-color: rgba(229, 227, 67, .5);
+  border-color: #E5E343;
+}
+
+.busy-bg {
+  background-color: rgba(236, 129, 80, .5);
+  border-color: #EC8150;
+}
+
+.offline-bg {
+  background-color: rgba(204, 204, 204, .5);
+  border-color: #CCCCCC;
+}
