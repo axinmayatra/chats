@@ -1,7 +1,9 @@
 Msgs = new Mongo.Collection('msgs');
-if (Meteor.isClient) {
-	Meteor.subscribe('users');
 
+if (Meteor.isClient) {
+
+	Meteor.subscribe('users');
+	Session.set("chatroom","public");
 	Meteor.startup(function() {
 		UserPresence.awayTime = 60000;
 		UserPresence.awayOnWindowBlur = false;
@@ -40,7 +42,10 @@ if (Meteor.isClient) {
 			return Meteor.user().username;
 		},
 		msgs: function() {
-			return Msgs.find({},{sort:{at: -1}});
+			if(Session.get("chatroom")=="public")
+				return Msgs.find({to:Session.get("chatroom")},{sort:{at: -1}});	
+			else
+				return Msgs.find({$or: [{by: Meteor.user().username,to:Session.get("chatroom")},{by: Session.get("chatroom"),to:Meteor.user().username}]},{sort:{at: -1}});
 		}
 	});
 
@@ -62,6 +67,10 @@ if (Meteor.isClient) {
 		}
 		input.val(val + '@' + this.username + ' ');
 		input.focus();
+		},
+		'dblclick .user-name':function(e) {
+			$('.msg-input').val('');
+			Session.set("chatroom",this.username);
 		}
 	});
 
@@ -83,8 +92,7 @@ if (Meteor.isClient) {
 				msg: t,
 				at: new Date(),
 				by: Meteor.user().username,
-				to: "public",
-				user_id: Meteor.user()
+				to: Session.get("chatroom")
 			});
 			e.target.text.value = "";
 		}
@@ -117,10 +125,9 @@ if (Meteor.isClient) {
 				if(error){
 					console.log(error.reason);
 				}
-				// Presence.insert({
-				// 	username: Meteor.user().username,
-				// 	at: new Date()
-				// });
+				else{
+					Session.set("chatroom","public");
+				}
 			});
 		}
 	});
