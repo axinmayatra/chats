@@ -1,0 +1,6 @@
+{
+  "name": "Chats",
+  "tagline": "",
+  "body": "#Chats\r\n\r\nThis is a simple application for chating developed using Meteor platform. [Meteor](https://www.meteor.com/)\r\n\r\n## Quick Start\r\n\r\nInstall meteor first on any platform and then download this application;\r\nPut it in any folder, for ex. simple-chat\r\n```bash\r\ncd simple-chat\r\nmeteor\r\n```\r\nApplication is still in development.",
+  "note": "Don't delete this file! It's used internally to help with page regeneration."
+}
