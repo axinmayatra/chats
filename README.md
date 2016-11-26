@@ -10,4 +10,4 @@ Put it in any folder, for ex. simple-chat
 cd simple-chat
 meteor
 ```
-Application is still in development.
+This project is not in developmenet anymore.
